@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+.wrapper {
+  @apply block w-screen min-h-screen relative;
+}
+
+.wrapper > form {
+  @apply flex flex-col absolute;
+  animation: slideIn 1.5s linear;
+}
+
+.wrapper > form > h1 {
+  @apply text-4xl font-bold underline;
+}
+
+.wrapper > form > input {
+  @apply my-2 placeholder-gray-400 p-2 border border-gray-300 rounded outline-none focus:placeholder-transparent;
+  transition: box-shadow 0.3s;
+}
+
+.wrapper > form > button {
+  @apply text-2xl transition duration-300 ease-in-out;
+}
+
+.wrapper > form > button:hover {
+  @apply shadow shadow-amber-200 bg-amber-100/90 scale-105;
+}
+
+.wrapper > form > input:hover {
+  @apply border-amber-200 shadow shadow-amber-200;
+}
+
+.success {
+  @apply text-5xl text-green-600 text-center;
+  animation: fade 1s;
+}
+
+.wrapper > form > input.input-error {
+  @apply border-2 border-solid border-red-600;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
